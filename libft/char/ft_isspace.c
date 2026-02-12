@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cafabre <camille.fabre003@gmail.com>       +#+  +:+       +#+        */
+/*   By: cafabre <cafabre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 23:44:22 by cafabre           #+#    #+#             */
-/*   Updated: 2025/07/21 21:13:53 by cafabre          ###   ########.fr       */
+/*   Created: 2024/11/04 15:47:19 by rshin             #+#    #+#             */
+/*   Updated: 2026/02/12 19:57:53 by cafabre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_print_char(char c)
+int	ft_isspace(int c)
 {
-	if (ft_putchar_fd(c, 1) == -1)
-		return (-1);
-	return (1);
+	return ((c >= '\t' && c <= '\r') || c == ' ');
 }

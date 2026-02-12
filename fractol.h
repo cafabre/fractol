@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cafabre <camille.fabre003@gmail.com>       +#+  +:+       +#+        */
+/*   By: cafabre <cafabre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 17:53:13 by cafabre           #+#    #+#             */
-/*   Updated: 2025/07/21 17:55:41 by cafabre          ###   ########.fr       */
+/*   Updated: 2026/02/12 19:59:45 by cafabre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <math.h>
 # include "minilibx-linux/mlx.h"
 # include "libft/libft.h"
-# include "libft/ft_printf.h"
 
 # define WIDTH 800
 # define HEIGHT 800
@@ -78,7 +77,6 @@ int		get_color(int iter, int max_iter);
 int		key_hook(int keycode, t_fractol *fractol);
 int		mouse_hook(int button, int x, int y, t_fractol *fractol);
 int		close_window(t_fractol *fractol);
-double	ft_atof(char *str);
 int		is_valid_number(char *str);
 
 #endif
