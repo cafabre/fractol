@@ -47,11 +47,11 @@ For Burning Ship
 ./fractol burning_ship
 ```
 
-## Usage
+## ⚙️ Usage
 Once the program is launched, a window will open with the image of the selected fractal set.
 You can move around the image using the arrow keys on your keyboard, and zoom in and out using the mouse scroll wheel. The zoom will follow the position of the cursor.
 
-## Screenshots
+## 📸 Screenshots
 <p align="center">
 	<img src="assets/julia.png">
 </p>
