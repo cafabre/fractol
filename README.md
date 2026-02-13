@@ -1,3 +1,7 @@
+<p align="center">
+	<img src="assets/fractol_logo.png">
+</p>
+
 <h1 align="center">❄️ Fract-ol - Fractal Explorer</h1>
 
 <p align="center">
