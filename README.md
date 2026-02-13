@@ -1,4 +1,4 @@
-<h align="center">❄️ Fract-ol - Fractal Explorer</h1>
+<h1 align="center">❄️ Fract-ol - Fractal Explorer</h1>
 
 <p align="center">
 	<img src="assets/score.png">
