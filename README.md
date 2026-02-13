@@ -1,6 +1,4 @@
-<p align="center>
-	<h1>❄️ Fract-ol - Fractal Explorer</h1>
-</p>
+<h align="center">❄️ Fract-ol - Fractal Explorer</h1>
 
 <p align="center">
 	<img src="assets/score.png">
@@ -21,7 +19,7 @@ The **fract-ol** project is the first graphics project in the Ecole 42 curriculu
 
 #### 1. Clone the project
 ```bash
-git clone [https://github.com/cafabre/fractol.git](https://github.com/cafabre/fractol.git)
+git clone https://github.com/cafabre/fractol.git
 cd fractol
 ```
 
