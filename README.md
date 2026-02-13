@@ -1,28 +1,51 @@
-# ❄️ fract-ol - Explorateur de Fractales
+# ❄️ Fract-ol - Fractal Explorer
+
+<p align="center">
+	<img src="assets/score.png" width="120">
+</p>
 
 ## 📖 Description
-Le projet **fract-ol** est une immersion dans l'univers des graphiques par ordinateur. L'objectif est de générer des ensembles fractals (Mandelbrot, Julia, etc.) en temps réel en utilisant la bibliothèque **MiniLibX**. Ce projet permet de manipuler les nombres complexes et d'optimiser le rendu via des algorithmes itératifs.
+The **fract-ol** project is the first graphics project in the Ecole 42 curriculum. The goal is to generate fractal sets in real time using the **MiniLibX** library. I also implemented the Burning Ship set as a bonus. This project allows you to manipulate complex numbers and optimize rendering using iterative algorithms.
 
 ---
 
 ## 🛠️ Installation & Compilation
 
 ### Prérequis
-* Un compilateur (`gcc` ou `clang`).
-* La bibliothèque **MiniLibX** (configurée pour Linux ou MacOS).
-* `make`.
+* The `gcc` compiler
+* The **MiniLibX** library (to replace by the appropriate version if you are under MacOS).
 
 ### Instructions
+
+# 1. Clone the project
 ```bash
-# Cloner le projet
 git clone [https://github.com/cafabre/fractol.git](https://github.com/cafabre/fractol.git)
-cd fract-ol
+cd fractol
+```
 
-# Compiler le projet
+# 2. Compile the program
+```bash
 make
+```
 
-# Pour Mandelbrot
+# For Mandelbrot
+```bash
 ./fractol mandelbrot
+```
 
-# Pour Julia (nécessite deux paramètres complexes)
+# For Julia (takes two complex parameters - optional)
+```bash
 ./fractol julia -0.4 0.6
+```
+
+# For Burning Ship
+```bash
+./fractol burning_ship
+```
+
+### Usage
+Once the program is launched, a window will open with the image of the selected fractal set.
+You can move around the image using the arrow keys on your keyboard, and zoom in and out using the mouse scroll wheel. The zoom will follow the position of the cursor.
+
+### Screenshots
+comment inserer une image ??? je veux en mettre 3
