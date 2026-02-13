@@ -53,44 +53,49 @@ RESET       = \033[0m
 
 all: $(NAME)
 
-# Final binary compilation
+# $(NAME) dépend des fichiers .a et des .o
 $(NAME): $(LIBFT) $(MLX) $(OBJS)
+	@echo "🔗 Linking $(NAME)..."
 	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX_FLAGS) -o $(NAME)
 	@echo "$(GREEN)✨ Fract-ol compiled successfully!$(RESET)"
 
-# Libft compilation
+# Règle pour compiler la Libft
 $(LIBFT):
-	@make -C $(LIBFT_DIR) --no-print-directory
+	@$(MAKE) -C $(LIBFT_DIR) --no-print-directory
 
-# MLX compilation
+# Règle UNIQUE pour la MinilibX
 $(MLX):
-	@make -C $(MLX_DIR) --no-print-directory
+	@if [ ! -d "$(MLX_DIR)" ]; then \
+		echo "📥 Cloning MinilibX..."; \
+		git clone --depth 1 https://github.com/42Paris/minilibx-linux.git $(MLX_DIR); \
+	fi
+	@echo "🛠️  Compiling MinilibX..."
+	@$(MAKE) -C $(MLX_DIR) --no-print-directory > /dev/null 2>&1
 
-# Object files compilation
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile | $(OBJ_DIR)
+# Compilation des objets
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	@echo "Compiling: $<"
 	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
-# Object directory creation
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
-# Clean object and dependency files
+# --- CLEAN RULES ---
+
 clean:
 	@$(RM) $(OBJ_DIR)
-	@make clean -C $(LIBFT_DIR) --no-print-directory
-	@make clean -C $(MLX_DIR) --no-print-directory
+	@$(MAKE) clean -C $(LIBFT_DIR) --no-print-directory
+	@if [ -d "$(MLX_DIR)" ]; then $(MAKE) clean -C $(MLX_DIR) --no-print-directory; fi
 	@echo "$(RED)🧹 Objects and dependencies cleaned.$(RESET)"
 
-# Full clean
 fclean: clean
 	@$(RM) $(NAME)
-	@make fclean -C $(LIBFT_DIR) --no-print-directory
+	@$(MAKE) fclean -C $(LIBFT_DIR) --no-print-directory
+	@$(RM) $(MLX_DIR)
 	@echo "$(RED)🗑️  Everything removed.$(RESET)"
 
-# Rebuild everything
 re: fclean all
 
 -include $(DEPS)
 
-.PHONY: all clean fclean re $(LIBFT) $(MLX)
+.PHONY: all clean fclean re
